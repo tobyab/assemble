@@ -14,3 +14,5 @@ export async function query(data) {
 query({"inputs": "Can you please let us know more details about your "}).then((response) => {
 	console.log(JSON.stringify(response));
 });
+
+// needs to be able to return the person the quote is by!, and also potentially in what channel.
