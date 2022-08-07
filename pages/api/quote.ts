@@ -8,7 +8,7 @@ export default async function handler (
   // gets the quotes to return and render
   if (req.method === "GET") {
     const funnyQuotes = await prisma.quote.findMany();
-    return res.json(
+    return res.json (
       funnyQuotes.map((quote: { body: any; author: any; id: any;}) => ({
         body: quote.body,
         author: quote.author,
@@ -26,7 +26,7 @@ export default async function handler (
         author: author
       }
     })
-    return res.status(200).json({
+    res.status(200).json({
       id: newData.id.toString(),
       body: newData.body,
       author: newData.author
