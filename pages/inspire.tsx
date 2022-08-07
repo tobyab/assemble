@@ -1,4 +1,3 @@
-import { query } from '../utils/model'
 import Head from 'next/head'
 import styles from '../styles/Inspire.module.css'
 
