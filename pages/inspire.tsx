@@ -12,7 +12,7 @@ export default function Inspire() {
                     src={`/bg/${randInt}.jpg`}
                 />
                 <div className="absolute top-32 pl-64">
-                    <h1 className="text-9xl font-bold text-white w-2/3">"i hate this font."</h1>
+                    <h1 className="text-9xl font-bold text-white w-2/3">&qout;i hate this font.&qout;</h1>
                     <p className="text-white text-2xl">- Slack user</p>
                 </div>
             </div>
