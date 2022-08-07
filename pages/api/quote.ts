@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../utils/prisma'
 
@@ -6,10 +5,11 @@ export default async function handler (
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // gets the quotes to return and render
   if (req.method === "GET") {
     const funnyQuotes = await prisma.quote.findMany();
     return res.json(
-      funnyQuotes.map((quote) => ({
+      funnyQuotes.map((quote: { body: any; author: any; }) => ({
         body: quote.body,
         author: quote.author,
       }))
@@ -25,8 +25,10 @@ export default async function handler (
         author: author
       }
     })
-    res.json(newData)
-    } else {
-      res.status(400).json({ error: "Invalid request" })
-    }
+    return res.status(200).json({
+      id: newData.id.toString(),
+      body: newData.body,
+      author: newData.author
+    })
   }
+}

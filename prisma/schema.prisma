@@ -11,7 +11,7 @@ datasource db {
 }
 
 model quote {
-  id         String @unique
+  id         Int @id @default(autoincrement())
   author     String @db.VarChar(256)
   body       String @db.VarChar(500)
 }
