@@ -16,10 +16,11 @@ export default async function handler (
       )
     }
 
-  const { body, author } = req.body;
+  const { body, author, id } = req.body;
   if (req.method === "POST") {
     const newData = await prisma.quote.create({
       data: {
+        id: id,
         body: body,
         author: author
       }
