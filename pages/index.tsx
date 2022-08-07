@@ -26,10 +26,10 @@ const Home: NextPage = () => {
         here&apos;s all of the totally useless things we decided to build, here at Assemble!
       </p>
       <button
-      className="bg-red-800 p-4"
+      className="p-4"
         onClick={() => setParty(true)}
       >
-        ${`party || "disable party mode :(`}
+        Pary mode
       </button>
       <div>
         <Card/>
